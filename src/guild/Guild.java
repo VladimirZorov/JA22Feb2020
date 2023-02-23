@@ -1,6 +1,5 @@
 package guild;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -54,11 +53,11 @@ public class Guild {
         }
     }
 
-    public List kickPlayersByClass(String clazz) {
-        List<Player> removed = new ArrayList<>();
+    public Player [] kickPlayersByClass(String clazz) {
+        Player [] removed = new Player[0];
         for (Player player : players) {
             if (player.getClazz().equals(clazz)) {
-                removed.add(player);
+                Arrays.stream(removed).distinct();
                 players.remove(player);
             }
         }
@@ -69,11 +68,14 @@ public class Guild {
         return players.size();
     }
 
-    public void report() {
-        System.out.printf("Players in the guild: %s:%n", name);
+    public String report() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("Players in the guild: %s:", name)).append(System.lineSeparator());
+
         for (Player player : players) {
-            System.out.println(player.toString());
+            sb.append(player.toString()).append(System.lineSeparator());
         }
+        return sb.toString().trim();
     }
 
 }
