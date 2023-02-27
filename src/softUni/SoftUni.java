@@ -38,11 +38,11 @@ public class SoftUni {
     public String remove(Student student) {
         for (Student student1 : data) {
             if (student1.equals(student)) {
-                return String.format("Removed student %s %s.", student1.getFirstName(), student1.getLastName());
                 data.remove(student);
+                return String.format("Removed student %s %s.", student1.getFirstName(), student1.getLastName());
             }
         }
-        return null;
+        return "Student not found.";
     }
 
     public Student getStudent(String firstName, String lastName) {
