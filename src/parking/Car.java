@@ -36,4 +36,8 @@ public class Car {
         this.year = year;
     }
 
+    @Override
+    public String toString() {
+        return manufacturer + " " + model + " (" + year + ")";
+    }
 }
