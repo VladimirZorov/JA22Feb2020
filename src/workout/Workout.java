@@ -1,13 +1,13 @@
 package workout;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.ArrayList;;
+import java.util.List;
 
 public class Workout {
 
     private String type;
     private int exerciseCount;
-    private Collection<Exercise> exercises;
+    private List<Exercise> exercises;
 
     public Workout(String type, int exerciseCount) {
         this.type = type;
